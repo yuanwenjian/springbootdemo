@@ -1,14 +1,13 @@
 server:
-    port: 8080
+    port: 8082
 
 yuanwj:
-    randomString: ${random:value}
     swagger:
         title: SpringBoot Demo API
         description: SpringBoot api Documentation
         version: 1.0.1
         termsOfServiceUrl:
-        contactName: 苑文建test
+        contactName: 苑文建prod
         contactEmail: yuanwj0929@gmail.com
         license: CC BY 3.0 CN 协议
-        licenseUrl: http://creativecommons.org/licenses/by/3.0/cn
+        licenseUrl: http://creativecommons.org/licenses/by/3.0
