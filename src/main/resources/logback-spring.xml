@@ -13,13 +13,34 @@
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>WARN</level>
+            <level>debug</level>
         </filter>
         <encoder>
             <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg %n</Pattern>
         </encoder>
     </appender>
+
+
+    <appender name="FILEERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>./log/${appName}.error</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rolling over -->
+            <FileNamePattern>${appName}.%d{yyyy-MM-dd}.error</FileNamePattern>
+            <!-- keep 30 days' log history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>error</level>
+        </filter>
+
+        <encoder>
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg %n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.yuanwj" level="debug"></logger>
     <root level="warn">
         <appender-ref ref="FILE"></appender-ref>
+        <appender-ref ref="FILEERROR"></appender-ref>
     </root>
 </configuration>

@@ -25,9 +25,8 @@ public class HelloWordResource {
 
     @RequestMapping(value = "helloWorld")
     public String helloWorld(){
-        LOG.warn(configProperties.getRandomString());
-        LOG.warn(configProperties.getSwagger().getTitle());
-        LOG.warn(environment.getProperty("server.port"));
+        String aaa=null;
+        System.out.println(aaa.length());
         return configProperties.getRandomString();
     }
 
